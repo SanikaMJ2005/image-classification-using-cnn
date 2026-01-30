@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNN Image Classification - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <i class="fas fa-brain"></i>
+                <span>CNN Image Classifier</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="/#features" class="nav-link">Features</a></li>
+                <li><a href="/#demo" class="nav-link">Demo</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Handwritten Digit Recognition</h1>
+            <p class="hero-subtitle">Powered by Deep Learning & Convolutional Neural Networks</p>
+            <a href="#demo" class="btn btn-primary">Try Now</a>
+        </div>
+        <div class="hero-background">
+            <div class="neural-network">
+                <div class="node"></div>
+                <div class="node"></div>
+                <div class="node"></div>
+                <div class="node"></div>
+                <div class="node"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Classifier?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Advanced CNN</h3>
+                    <p>State-of-the-art Convolutional Neural Network trained on the MNIST dataset with high accuracy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightning-bolt"></i>
+                    </div>
+                    <h3>Fast Processing</h3>
+                    <p>Real-time prediction with instant results. Get your classification in milliseconds.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>High Accuracy</h3>
+                    <p>Trained model achieves over 95% accuracy on digit recognition tasks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Works seamlessly on desktop, tablet, and mobile devices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Detailed Analytics</h3>
+                    <p>View confidence scores and detailed prediction probabilities for each class.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Open Source</h3>
+                    <p>Built with TensorFlow and Keras. Easy to understand and modify.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">Try It Yourself</h2>
+            <div class="demo-content">
+                <div class="upload-area">
+                    <div class="upload-box" id="uploadBox">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Upload Image</h3>
+                        <p>Drag and drop your handwritten digit image here</p>
+                        <p class="file-info">or click to browse</p>
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                    </div>
+                    <button class="btn btn-secondary" id="uploadBtn">Choose Image</button>
+                </div>
+
+                <div class="results-area">
+                    <div class="preview-box" id="previewBox" style="display: none;">
+                        <h3>Image Preview</h3>
+                        <img id="previewImage" alt="Preview">
+                    </div>
+
+                    <div class="prediction-box" id="predictionBox" style="display: none;">
+                        <h3>Prediction Result</h3>
+                        <div class="prediction-result">
+                            <div class="predicted-digit" id="predictedDigit"></div>
+                            <div class="confidence-info">
+                                <p class="confidence-label">Confidence Score</p>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" id="confidenceFill"></div>
+                                </div>
+                                <p class="confidence-percentage" id="confidencePercentage"></p>
+                            </div>
+                        </div>
+
+                        <div class="all-predictions">
+                            <h4>All Probabilities</h4>
+                            <div id="probabilitiesContainer"></div>
+                        </div>
+                    </div>
+
+                    <div class="error-box" id="errorBox" style="display: none;">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p id="errorMessage"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Upload Image</h3>
+                    <p>Provide a clear image of a handwritten digit (0-9)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Preprocess</h3>
+                    <p>Image is converted to grayscale and resized to 28x28 pixels</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Analyze</h3>
+                    <p>CNN model analyzes the image through multiple layers</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Classify</h3>
+                    <p>Get instant prediction with confidence score</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 CNN Image Classification. All rights reserved.</p>
+            <p>Built with <i class="fas fa-heart"></i> using Flask, TensorFlow, and Keras</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

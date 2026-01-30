@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - CNN Image Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <i class="fas fa-brain"></i>
+                <span>CNN Image Classifier</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/#features" class="nav-link">Features</a></li>
+                <li><a href="/#demo" class="nav-link">Demo</a></li>
+                <li><a href="/about" class="nav-link active">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h1 class="page-title">About This Project</h1>
+
+            <div class="about-content">
+                <div class="about-card">
+                    <h2><i class="fas fa-cube"></i> Project Overview</h2>
+                    <p>
+                        This CNN Image Classification project demonstrates the power of deep learning 
+                        for computer vision tasks. It uses a Convolutional Neural Network trained on the 
+                        MNIST dataset to recognize handwritten digits with high accuracy.
+                    </p>
+                    <p>
+                        The project showcases the complete pipeline from data loading and preprocessing 
+                        to model training, evaluation, and deployment through a user-friendly web interface.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <h2><i class="fas fa-database"></i> Dataset</h2>
+                    <p>
+                        <strong>MNIST (Modified National Institute of Standards and Technology)</strong>
+                    </p>
+                    <ul class="info-list">
+                        <li>70,000 images of handwritten digits (0-9)</li>
+                        <li>28×28 pixel grayscale images</li>
+                        <li>60,000 training samples</li>
+                        <li>10,000 test samples</li>
+                        <li>Single color channel (grayscale)</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <h2><i class="fas fa-network-wired"></i> Model Architecture</h2>
+                    <p>The CNN model uses the following architecture:</p>
+                    <ul class="info-list">
+                        <li><strong>Input Layer:</strong> 28×28×1 (grayscale images)</li>
+                        <li><strong>Conv2D Layers:</strong> Multiple convolution layers with ReLU activation</li>
+                        <li><strong>MaxPooling Layers:</strong> For dimensionality reduction</li>
+                        <li><strong>Dropout Layers:</strong> For regularization and preventing overfitting</li>
+                        <li><strong>Dense Layers:</strong> Fully connected layers for classification</li>
+                        <li><strong>Output Layer:</strong> 10 units with softmax activation (one per digit)</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <h2><i class="fas fa-tools"></i> Technologies Used</h2>
+                    <ul class="tech-list">
+                        <li><strong>Backend:</strong> Flask (Python web framework)</li>
+                        <li><strong>Deep Learning:</strong> TensorFlow & Keras</li>
+                        <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript</li>
+                        <li><strong>Image Processing:</strong> PIL (Python Imaging Library)</li>
+                        <li><strong>Data Science:</strong> NumPy, Matplotlib, Scikit-learn</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <h2><i class="fas fa-chart-line"></i> Model Performance</h2>
+                    <p>The trained CNN model achieves excellent performance metrics:</p>
+                    <ul class="info-list">
+                        <li><strong>Accuracy:</strong> &gt;95% on test dataset</li>
+                        <li><strong>Precision:</strong> High precision across all digit classes</li>
+                        <li><strong>Recall:</strong> Excellent recall for digit recognition</li>
+                        <li><strong>Inference Time:</strong> &lt;100ms per image</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <h2><i class="fas fa-graduation-cap"></i> Learning Outcomes</h2>
+                    <p>This project covers key concepts in deep learning and computer vision:</p>
+                    <ul class="info-list">
+                        <li>Convolutional Neural Networks (CNN) architecture</li>
+                        <li>Image preprocessing and normalization</li>
+                        <li>Model training and evaluation</li>
+                        <li>Handling class imbalance and overfitting</li>
+                        <li>Web deployment with Flask</li>
+                        <li>REST API design for machine learning models</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <h2><i class="fas fa-code-branch"></i> Project Structure</h2>
+                    <pre><code>image-classification-using-cnn/
+├── app.py                          # Flask application
+├── cnn_image_classifier.py          # Model training script
+├── mnist_cnn_model.h5              # Trained model (generated after training)
+├── templates/
+│   ├── index.html                  # Home page
+│   └── about.html                  # About page
+├── static/
+│   ├── css/
+│   │   └── style.css               # Styling
+│   └── js/
+│       └── script.js               # Client-side logic
+├── uploads/                         # Uploaded images directory
+└── README.md                        # Project documentation</code></pre>
+                </div>
+
+                <div class="about-card">
+                    <h2><i class="fas fa-rocket"></i> Getting Started</h2>
+                    <ol class="info-list">
+                        <li>Train the model using <code>python cnn_image_classifier.py</code></li>
+                        <li>Install Flask: <code>pip install flask</code></li>
+                        <li>Run the application: <code>python app.py</code></li>
+                        <li>Open your browser and navigate to <code>http://localhost:5000</code></li>
+                        <li>Upload an image of a handwritten digit to test the classifier</li>
+                    </ol>
+                </div>
+
+                <div class="about-card">
+                    <h2><i class="fas fa-lightbulb"></i> Future Enhancements</h2>
+                    <ul class="info-list">
+                        <li>Support for multi-digit recognition</li>
+                        <li>Webcam/camera input for real-time classification</li>
+                        <li>Model visualization and explainability</li>
+                        <li>Training different datasets (letters, symbols)</li>
+                        <li>Docker containerization for easy deployment</li>
+                        <li>Mobile app version</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Ready to Classify?</h2>
+                <p>Try our CNN Image Classifier and experience the power of deep learning</p>
+                <a href="/" class="btn btn-primary">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 CNN Image Classification. All rights reserved.</p>
+            <p>Built with <i class="fas fa-heart"></i> using Flask, TensorFlow, and Keras</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
